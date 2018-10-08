@@ -1,0 +1,86 @@
+# This file is included in-line in the env section of deployment.yaml
+# if .Values.generatedBindings.enabled is true.
+- name: IBM_APM_SERVER_URL
+  valueFrom:
+    secretKeyRef:
+      name: apm-server-config
+      key: ibm_apm_server_url
+      optional: true
+- name: IBM_APM_KEYFILE
+  valueFrom:
+    secretKeyRef:
+      name: apm-server-config
+      key: ibm_apm_keyfile
+      optional: true
+- name: IBM_APM_KEYFILE_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: apm-server-config
+      key: ibm_apm_keyfile_password
+      optional: true
+- name: IBM_APM_INGRESS_URL
+  valueFrom:
+    secretKeyRef:
+      name: apm-server-config
+      key: ibm_apm_ingress_url
+      optional: true
+- name: IBM_APM_ACCESS_TOKEN
+  valueFrom:
+    secretKeyRef:
+      name: apm-server-config
+      key: ibm_apm_access_token
+      optional: true
+- name: service_alert_notification
+  valueFrom:
+    secretKeyRef:
+      name: binding-alert-name
+      key: binding
+      optional: true
+- name: service_appid
+  valueFrom:
+    secretKeyRef:
+      name: binding-auth-name
+      key: binding
+      optional: true
+- name: service_cloudant
+  valueFrom:
+    secretKeyRef:
+      name: binding-cloudant-name
+      key: binding
+      optional: true
+- name: service_mongodb
+  valueFrom:
+    secretKeyRef:
+      name: binding-my-mongodb
+      key: binding
+      optional: true
+- name: service_object_storage
+  valueFrom:
+    secretKeyRef:
+      name: binding-object-storage-name
+      key: binding
+      optional: true
+- name: service_postgre
+  valueFrom:
+    secretKeyRef:
+      name: binding-my-postgresql
+      key: binding
+      optional: true
+- name: service_push
+  valueFrom:
+    secretKeyRef:
+      name: binding-push-name
+      key: binding
+      optional: true
+- name: service_redis
+  valueFrom:
+    secretKeyRef:
+      name: binding-my-redis
+      key: binding
+      optional: true
+- name: service_watson_conversation
+  valueFrom:
+    secretKeyRef:
+      name: binding-conversation-name
+      key: binding
+      optional: true
